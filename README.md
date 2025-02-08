@@ -13,9 +13,16 @@ A atividade requer a configuração de um sistema para controle de posição do 
 - **Servomotor**: Motor micro servo padrão (simulado no Wokwi).
 - **BitDogLab**: LED rgb GPIO 12.
 
+### Para teste na placa BitDogLab, altere os seguintes códigos:
+
+```c
+#define PWM_PIN 12    // Pino GPIO do LEDS para teste na placa BitDogLab
+// #define PWM_PIN 22       // Pino GPIO do servo
+```
+
 ### 🎥 Vídeo de Demonstração
 
-[![Assistir Vídeo](https://img.shields.io/badge/Assistir%20Vídeo-Demonstrativo-blue?style=for-the-badge&logo=youtube)](https://www.dropbox.com/scl/fi/i32f4t9dqggn4c1durb4o/2025-02-04-08-52-05.mkv?rlkey=s6ofq9yumuts3h8chte052cuj&dl=0)
+[![Assistir Vídeo](https://img.shields.io/badge/Assistir%20Vídeo-Demonstrativo-blue?style=for-the-badge&logo=youtube)](https://drive.google.com/file/d/1Tn9JLP6RqMfpO50SAAN_LrH93A7aRCu_/view?usp=sharing)
 
 ## Requisitos da Atividade
 
@@ -28,45 +35,9 @@ A atividade requer a configuração de um sistema para controle de posição do 
 
 ---
 
-## Explicação do Cálculo da Frequência do PWM
+### Explicação do Cálculo da Frequência do PWM
 
-A frequência do PWM (\(f_{PWM}\)) é determinada pela fórmula:
-
-\[
-f_{PWM} = \frac{f_{clock}}{(d_i + \frac{d_f}{16}) \times (wrap + 1)}
-\]
-
-### Variáveis
-
-- \(f_{clock} = 125 \times 10^6\) Hz (frequência do clock principal do RP2040).
-- \(f_{PWM} = 50\) Hz.
-- \(wrap = 25000\).
-
-### Passo a Passo do Cálculo
-
-1. Reorganizamos a fórmula para encontrar \(d_i + \frac{d_f}{16}\):
-
-   \[
-   d_i + \frac{d_f}{16} = \frac{f_{clock}}{f_{PWM} \times (wrap + 1)}
-   \]
-
-2. Substituímos os valores:
-
-   \[
-   d_i + \frac{d_f}{16} = \frac{125000000}{50 \times (25000 + 1)}
-   \]
-
-3. Calculamos o denominador:
-
-   \[
-   50 \times (25000 + 1) = 1250000
-   \]
-
-4. Agora, dividimos:
-
-   \[
-   d_i + \frac{d_f}{16} = \frac{125000000}{1250000} = 100
-   \]
+![Cálculo do Divisor do Clock](https://drive.google.com/file/d/1N8XYCjX1BpD_Bkgt_Jv2n9tdahdk5hgJ/view?usp=sharing)
 
 ### Resultado
 

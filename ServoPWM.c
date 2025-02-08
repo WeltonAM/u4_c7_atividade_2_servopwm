@@ -1,16 +1,18 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 
-#define PWM_PIN 12       // Pino GPIO do servo
+// #define PWM_PIN 12    // Pino GPIO do LEDS para teste na placa BitDogLab
+#define PWM_PIN 22       // Pino GPIO do servo
+
 #define WRAP_VALUE 25000 // Período de 20ms (50Hz)
 
 // Definição dos pulsos de controle do servo
-#define PULSE_MAX 2400  // Pulso para 180 graus (2400us)
-#define PULSE_90 1470   // Pulso para 90 graus (1470us)
-#define PULSE_MIN 500   // Pulso para 0 graus (500us)
+#define PULSE_MAX 2400 // Pulso para 180 graus (2400us)
+#define PULSE_90 1470  // Pulso para 90 graus (1470us)
+#define PULSE_MIN 500  // Pulso para 0 graus (500us)
 
-#define SWEEP_STEP 5    // Passo para movimento suave (5µs)
-#define SWEEP_DELAY 10  // Tempo entre passos (10ms)
+#define SWEEP_STEP 5   // Passo para movimento suave (5µs)
+#define SWEEP_DELAY 10 // Tempo entre passos (10ms)
 
 // Função para configurar o PWM corretamente
 void set_pwm_pulse(uint gpio, uint16_t pulse_width)
