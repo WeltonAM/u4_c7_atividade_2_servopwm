@@ -30,9 +30,7 @@ A atividade requer a configuração de um sistema para controle de posição do 
 
 ## Explicação do Cálculo da Frequência do PWM
 
-A frequência do PWM (
-\( f_{PWM} \)
-) é calculada com base na seguinte equação:
+A frequência do PWM (\( f_{PWM} \)) é calculada com base na seguinte equação:
 
 \[
 f_{PWM} = \frac{f_{clock}}{(d_i + \frac{d_f}{16}) \times (wrap + 1)}
@@ -40,18 +38,26 @@ f_{PWM} = \frac{f_{clock}}{(d_i + \frac{d_f}{16}) \times (wrap + 1)}
 
 Onde:
 
-- **\( f_{clock} \)**: Frequência do clock principal (125 MHz para o RP2040).
-- **\( d_i \)**: Parte inteira do divisor do clock.
-- **\( d_f \)**: Parte fracionária do divisor do clock.
-- **\( wrap \)**: Valor máximo do contador PWM.
+- \( f_{clock} \): Frequência do clock principal (125 MHz para o RP2040).
+- \( d_i \): Parte inteira do divisor do clock.
+- \( d_f \): Parte fracionária do divisor do clock.
+- \( wrap \): Valor máximo do contador PWM.
 
 ### Cálculo do divisor do clock:
 
 Sabemos que:
 
-- \( f_{clock} = 125 \times 10^6 \) Hz
-- \( f_{PWM} = 50 \) Hz
-- \( wrap = 25000 \)
+\[
+f_{clock} = 125 \times 10^6 \text{ Hz}
+\]
+
+\[
+f_{PWM} = 50 \text{ Hz}
+\]
+
+\[
+wrap = 25000
+\]
 
 Reorganizando a equação:
 
@@ -73,7 +79,7 @@ d_i + \frac{d_f}{16} = \frac{125000000}{1250000} = 100
 
 Portanto, o **divisor do clock é 100**, ou seja:
 
-- **\( d_i = 100 \)**
-- **\( d_f = 0 \)**
+- \( d_i = 100 \)
+- \( d_f = 0 \)
 
 Isso garante uma frequência PWM precisa de **50Hz**.
