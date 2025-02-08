@@ -37,7 +37,7 @@ A atividade requer a configuração de um sistema para controle de posição do 
 
 ### Explicação do Cálculo da Frequência do PWM
 
-![Cálculo do Divisor do Clock](https://drive.google.com/file/d/1N8XYCjX1BpD_Bkgt_Jv2n9tdahdk5hgJ/view?usp=sharing)
+![Cálculo do Divisor do Clock](https://drive.google.com/uc?id=1N8XYCjX1BpD_Bkgt_Jv2n9tdahdk5hgJ)
 
 ### Resultado
 
