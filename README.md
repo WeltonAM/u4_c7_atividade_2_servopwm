@@ -1,6 +1,7 @@
-# Atividade - Controle de Servomotor por PWM
+# Atividade 2 - Unidade 4 - Capítulo 7 - Controle de Servomotor por PWM
 
-Esta atividade consiste na implementação de um sistema de controle de ângulo de um servomotor utilizando o módulo PWM do microcontrolador **RP2040** por meio da ferramenta **Pico SDK**. A simulação será realizada no **Wokwi**, empregando um **motor micro servo padrão**.
+Este projeto foi desenvolvido como parte da **Atividade 2** do curso de **EmbarcaTech TIC37 - Unidade 4**, **Capítulo 7**, consistindo na implementação de um sistema de controle de ângulo de um servomotor utilizando o módulo PWM do microcontrolador **RP2040** por meio da ferramenta **Pico SDK**. 
+Além disso, usando a placa **BitDogLab**, ferramenta da formação, ver resultado no LED rgb usando a porta GPIO 12.
 
 ## Descrição
 
@@ -10,12 +11,7 @@ A atividade requer a configuração de um sistema para controle de posição do 
 
 - **Microcontrolador**: Raspberry Pi Pico W.
 - **Servomotor**: Motor micro servo padrão (simulado no Wokwi).
-
-> **Observação**: Não será necessária a implementação de um circuito de interface entre o Raspberry Pi Pico W e o servomotor, pois a prática será realizada apenas com componentes simulados.
-
-### 📌 Simulação no Wokwi
-
-[![Abrir Simulação no Wokwi](https://img.shields.io/badge/Simular%20no-Wokwi-green?style=for-the-badge&logo=raspberrypi)](https://wokwi.com/projects/your_project_link_here)
+- **BitDogLab**: LED rgb GPIO 12.
 
 ### 🎥 Vídeo de Demonstração
 
@@ -23,12 +19,12 @@ A atividade requer a configuração de um sistema para controle de posição do 
 
 ## Requisitos da Atividade
 
-1. **Configuração da GPIO 22**: Definir a frequência do PWM para aproximadamente **50Hz** (período de 20ms). **(20% da nota)**
-2. **Posicionamento do servo a 180°**: Definir o ciclo ativo do PWM para **2.400µs (0,12%)**, aguardar **5 segundos**. **(10% da nota)**
-3. **Posicionamento do servo a 90°**: Definir o ciclo ativo do PWM para **1.470µs (0,0735%)**, aguardar **5 segundos**. **(10% da nota)**
-4. **Posicionamento do servo a 0°**: Definir o ciclo ativo do PWM para **500µs (0,025%)**, aguardar **5 segundos**. **(10% da nota)**
-5. **Movimento contínuo entre 0° e 180°**: Criar uma rotina para movimentação periódica entre os ângulos extremos, com incremento de **±5µs** e atraso de **10ms** para suavidade. **(35% da nota)**
-6. **Experimento com LED RGB - BitDogLab**: Testar o código usando o **LED RGB (GPIO 12)** e analisar seu comportamento. **(15% da nota)**
+1. **Configuração da GPIO 22**: Definir a frequência do PWM para aproximadamente **50Hz** (período de 20ms).
+2. **Posicionamento do servo a 180°**: Definir o ciclo ativo do PWM para **2.400µs (0,12%)**, aguardar **5 segundos**.
+3. **Posicionamento do servo a 90°**: Definir o ciclo ativo do PWM para **1.470µs (0,0735%)**, aguardar **5 segundos**.
+4. **Posicionamento do servo a 0°**: Definir o ciclo ativo do PWM para **500µs (0,025%)**, aguardar **5 segundos**.
+5. **Movimento contínuo entre 0° e 180°**: Criar uma rotina para movimentação periódica entre os ângulos extremos, com incremento de **±5µs** e atraso de **10ms** para suavidade.
+6. **Experimento com LED RGB - BitDogLab**: Testar o código usando o **LED RGB (GPIO 12)** e analisar seu comportamento.
 
 ---
 
@@ -81,4 +77,3 @@ Portanto, o **divisor do clock é 100**, ou seja:
 - **\( d_f = 0 \)**
 
 Isso garante uma frequência PWM precisa de **50Hz**.
-
