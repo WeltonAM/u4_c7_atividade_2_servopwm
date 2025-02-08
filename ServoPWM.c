@@ -1,7 +1,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 
-#define PWM_PIN 22       // Pino GPIO do servo
+#define PWM_PIN 12       // Pino GPIO do servo
 #define WRAP_VALUE 25000 // Período de 20ms (50Hz)
 
 // Definição dos pulsos de controle do servo
